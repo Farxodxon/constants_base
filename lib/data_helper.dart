@@ -36,9 +36,6 @@ class DatabaseHelper {
           _createDatabaseRegions(db,version);
         },
         onUpgrade: (db, oldVersion, newVersion) {
-            db.execute("DROP TABLE IF EXISTS users");
-            db.execute("DROP TABLE IF EXISTS posts");
-
             _createDatabaseSpheres(db,newVersion);
             _createDatabaseLanguages(db,newVersion);
             _createDatabaseRegions(db,newVersion);

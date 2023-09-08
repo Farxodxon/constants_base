@@ -217,7 +217,7 @@ class MyHomePage extends StatelessWidget {
                   Row(
                     children: [
                       Text("name: "),
-                      Text(name ?? ''),
+                      Text(truncateText1(name ?? '')),
                     ],
                   ),
                   Row(
