@@ -51,9 +51,9 @@ class MyHomePage extends StatelessWidget {
           centerTitle: true,
           bottom: const TabBar(
             tabs: [
-              Tab(icon: Icon(Icons.directions_car)),
-              Tab(icon: Icon(Icons.directions_transit)),
-              Tab(icon: Icon(Icons.directions_bike)),
+              Tab(icon: Text("Spheres")),
+              Tab(icon: Text("Languages")),
+              Tab(icon: Text("Regions")),
             ],
           ),
         ),
@@ -80,7 +80,7 @@ class MyHomePage extends StatelessWidget {
                                 sphereCubit.state[index].name ?? '',
                                 sphereCubit.state[index].text?.uz ?? '',
                                 sphereCubit.state[index].text?.en ?? '',
-                                sphereCubit.state[index].text?.ru ?? '') ;
+                                sphereCubit.state[index].text?.ru ?? '');
                           });
                     } else {
                       return Center(child: CircularProgressIndicator());
@@ -141,7 +141,7 @@ class MyHomePage extends StatelessWidget {
                               regionCubit.state[index].name?.uz ?? '',
                               regionCubit.state[index].name?.en ?? '',
                               regionCubit.state[index].name?.ru ?? '',
-                            ) ;
+                            );
                           });
                     } else {
                       return const Center(child: CircularProgressIndicator());
@@ -202,12 +202,14 @@ class MyHomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                 parentId!=null? Row(
-                    children: [
-                      Text("parent id: "),
-                      Text(parentId ?? ''),
-                    ],
-                  ):SizedBox(),
+                  parentId != null
+                      ? Row(
+                          children: [
+                            Text("parent id: "),
+                            Text(parentId ?? ''),
+                          ],
+                        )
+                      : SizedBox(),
                   Row(
                     children: [
                       Text("id: "),
